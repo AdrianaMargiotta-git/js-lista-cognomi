@@ -20,10 +20,7 @@ ordina.addEventListener('click',
     cognomi.push(surname);
     console.log(cognomi);
 
-    //Ordiniamo la lista alfabeticamente
-    cognomi.sort();
-    console.log("lista dei cognomi in ordine alfabetico: " + cognomi);
-
+    //LISTA COGNOMI NON ORDINATA
     //ciclo while
     var cognomeDue = "";
     var i = 0;
@@ -35,6 +32,33 @@ ordina.addEventListener('click',
 
     //stampa la lista
     console.log(cognomi);
+    document.getElementById('listaNonOrdinata').innerHTML = "Ecco la lista dei cognomi: ";
+    document.getElementById('risultato2').innerHTML = cognomeDue;
+
+    //stampa la posizione "umana" in cui si trova il cognome dell'utente
+    var posizione;
+    posizione = cognomi.indexOf(surname) + 1;
+    //document.getElementById('position').innerHTML = posizione + 1;
+    console.log(posizione);
+    document.getElementById('position2').innerHTML = "Il tuo cognome nella lista è al numero: " + posizione;
+
+    //LISTA COGNOMI ORDINE ALFABETICO
+    //Ordiniamo la lista alfabeticamente
+    cognomi.sort();
+    console.log("lista dei cognomi in ordine alfabetico: " + cognomi);
+
+    //ciclo while
+    cognomeDue = "";
+    i = 0;
+    while (i < cognomi.length) {
+      cognomeDue = cognomeDue + "<li>" + cognomi[i] + "</li>";
+
+      i++;
+    }
+
+    //stampa la lista
+    console.log(cognomi);
+    document.getElementById('listaOrdinata').innerHTML = "Ecco la lista dei cognomi in ordine alfabetico: ";
     document.getElementById('risultato').innerHTML = cognomeDue;
 
     //stampa la posizione "umana" in cui si trova il cognome dell'utente
